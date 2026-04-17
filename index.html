@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sakthi Portfolio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+body{
+  color:white;
+  background: linear-gradient(-45deg,#020617,#0f172a,#022c22,#020617);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+@keyframes gradient{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+#loader{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 60px;
+}
+nav h1{color:#22c55e;}
+nav ul{display:flex;gap:20px;list-style:none;}
+nav ul li{cursor:pointer;}
+nav ul li:hover{color:#22c55e;}
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:80px;
+}
+.profile{
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+}
+.profile img{width:150px;border-radius:50%;}
+section{padding:60px;}
+.title{color:#22c55e;margin-bottom:20px;font-size:28px;}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:15px;
+  backdrop-filter:blur(10px);
+  transition:0.4s;
+  opacity:0;
+  transform:translateY(40px);
+}
+.card.show{opacity:1;transform:translateY(0);}
+.card:hover{transform:scale(1.05);box-shadow:0 0 25px #22c55e;}
+.project{position:relative;}
+.project img{width:100%;border-radius:10px;}
+.overlay{
+  position:absolute;top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.7);
+  display:flex;justify-content:center;align-items:center;
+  opacity:0;transition:0.3s;
+}
+.project:hover .overlay{opacity:1;}
+.bar{background:#1e293b;border-radius:10px;margin:10px 0;}
+.bar div{height:8px;background:#22c55e;border-radius:10px;}
+input,textarea{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:5px;
+  margin:10px 0;
+}
+.btn{
+  background:#22c55e;
+  padding:10px 20px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+#contact .card p{
+  margin:10px 0;
+  font-size:16px;
+  color:#e2e8f0;
+}
+#contact strong{
+  color:#22c55e;
+}
+#contact a{
+  color:#22c55e;
+  text-decoration:none;
+  transition:0.3s;
+}
+#contact a:hover{
+  color:#4ade80;
+  text-shadow:0 0 10px #22c55e;
+}
+@media(max-width:900px){
+  .hero{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+<div id="loader"><h2>Loading...</h2></div>
+<nav>
+  <h1>Portfolio</h1>
+  <ul>
+    <li onclick="go('home')">Home</li>
+    <li onclick="go('about')">About</li>
+    <li onclick="go('projects')">Projects</li>
+    <li onclick="go('contact')">Contact</li>
+  </ul>
+</nav>
+<section class="hero" id="home">
+  <div>
+    <h2>Hi, I'm Sakthi S </h2>
+    <p>Full Stack Developer & Flutter Expert building modern apps.</p>
+    <button class="btn" onclick="downloadCV()">Download CV</button>
+  </div>
+</section>
+<section id="about">
+  <h2 class="title">About Me</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Who I Am</h3>
+      <p>I am a passionate app developer focused on building modern, user-friendly, and high-performance applications. I specialize in creating mobile and web apps using technologies like Flutter and modern development frameworks. As a college student, I am constantly learning and improving my skills to stay updated with the latest industry trends. I enjoy turning ideas into real-world solutions that are both functional and visually appealing.</p>
+    </div>
+    <div class="card">
+      <h3>Goal</h3>
+      <p>My goal is to become a highly skilled full-stack app developer capable of building scalable, efficient, and user-friendly applications. I aim to continuously learn new technologies and contribute to real-world projects that make a meaningful impact.</p>
+    </div>
+    <div class="card">
+      <h3>Skills</h3>
+      Flutter<div class="bar"><div style="width:90%"></div></div>
+      Firebase<div class="bar"><div style="width:80%"></div></div>
+      UI/UX<div class="bar"><div style="width:85%"></div></div>
+    </div>
+  </div>
+</section>
+<section>
+  <h2 class="title">Experience</h2>
+  <div class="grid">
+    <div class="card"><h3>Flutter Intern</h3><p>Built mobile applications using Flutter with a focus on clean UI design and smooth user experience. Worked on real-world projects and enhanced development skills.</p></div>
+    <div class="card"><h3>Freelancer</h3><p>Worked independently on developing mobile and web applications for clients. Delivered high-quality solutions with a focus on performance, user experience, and client requirements.</p></div>
+  </div>
+</section>
+<section id="projects">
+  <h2 class="title">Projects</h2>
+  <div class="grid">
+    <div class="card project">
+      <img src="C:\Users\sakthi\Downloads\smart calculator.png">
+      <div class="overlay">View</div>
+      <h3>Smart Calculator</h3>
+      <p>AI calculator with advanced features</p>
+    </div>
+    <div class="card project">
+      <img src="C:\Users\sakthi\Downloads\shopping image.png">
+      <div class="overlay">View</div>
+      <h3>E-commerce App</h3>
+      <p>Shopping app with payment system</p>
+    </div>
+  </div>
+</section>
+<section>
+  <h2 class="title">Services</h2>
+  <div class="grid">
+    <div class="card"><h3>App Dev</h3><p>Flutter apps</p></div>
+    <div class="card"><h3>Web Dev</h3><p>Modern websites</p></div>
+    <div class="card"><h3>UI/UX</h3><p>Clean designs</p></div>
+  </div>
+</section>
+<section>
+  <h2 class="title">Tech Stack</h2>
+  <div class="grid">
+    <div class="card">Flutter</div>
+    <div class="card">Dart</div>
+    <div class="card">Firebase</div>
+    <div class="card">HTML/CSS/JS</div>
+  </div>
+</section>
+<section>
+  <h2 class="title">My Stats</h2>
+  <div class="grid">
+    <div class="card"><h2>10+</h2><p>Projects</p></div>
+    <div class="card"><h2>5+</h2><p>Apps</p></div>
+  </div>
+</section>
+<section>
+  <h2 class="title">Testimonials</h2>
+  <div class="grid">
+    <div class="card"><p>"Great work!"</p></div>
+    <div class="card"><p>"Highly recommended"</p></div>
+  </div>
+</section>
+<section>
+  <div class="card" style="text-align:center;">
+    <h2>Let's Build Something 🚀</h2>
+    <button class="btn" onclick="go('contact')">Contact Me</button>
+  </div>
+</section>
+<section id="contact">
+  <h2 class="title">Contact</h2>
+  <div class="card">
+    <p><strong>Name:</strong>Sakthi S</p>
+    <p><strong>Email:</strong> sakthisaravannan0@gmail.com</p>
+    <br>
+    <p><strong>Phone:</strong> +9159345893</p>
+    <p><strong>Location:</strong> Tamil Nadu, India</p>
+    <br>
+    <p><strong>GitHub:</strong> 
+  <a href="https://github.com/sakthi" target="_blank">github.com/sakthi</a>
+</p>
+<p><strong>LinkedIn:</strong> 
+  <a href="https://linkedin.com/in/sakthi" target="_blank">linkedin.com/in/sakthi</a>
+</p>
+  </div>
+</sectio>
+<script>
+window.onload=()=>{document.getElementById("loader").style.display="none";}
+function go(id){document.getElementById(id).scrollIntoView({behavior:"smooth"});}
+const cards=document.querySelectorAll(".card");
+window.addEventListener("scroll",()=>{
+  cards.forEach(c=>{
+    if(c.getBoundingClientRect().top<window.innerHeight-50){
+      c.classList.add("show");
+    }
+  });
+});
+function sendMsg(e){
+  e.preventDefault();
+  alert("Message Sent!");
+}
+function downloadCV(){
+  alert("Add your CV link here");
+}
+</script>
+</body>
+</html>
